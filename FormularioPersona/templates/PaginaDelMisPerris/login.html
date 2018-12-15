@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>Ascensores</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/estilos.css' %}" type="text/css">
+</head>
+<body style="background-image: url(/static/img/fondo.jpg);" >
+    
+
+   
+<form method="POST">
+    {% csrf_token %}
+ <center><label style='margin: auto;font-size: 1200%; color:#C99107;' >Ascensores</label></center>
+  
+    <br>
+    <br>
+<center><label  style='font-size: 450%; color:#26E46B;' >Bienvenido</label></center>
+    
+    <br>
+    <br>
+    <br>
+
+   
+<center><label style='font-size: 200%; color: white;' for="username">Ingrese Usuario</label></center>
+    
+       <br>
+       <br>
+  <center><input  style='width:250px; height:30px;' class="form-control" type="text" name="username"></center> 
+       
+       <br>
+       <br>
+     <center><label style='font-size: 200%; color: white;' for="password">Ingrese Contraseña</label></center> 
+       
+       <br>
+       <br>
+       <center><input style='width:250px; height:30px;' class="form-control" type="password" name="password"></center> 
+      
+       <br>
+       <br>
+       <br>
+       <center><td colspan="2" align="center"><input   style='font-size: 200%; width:350px; height:70px; background-color: green; color: white;' class="redondeado" type="submit" value="Ingresar" ></td></center> 
+       
+       <br>
+       <br>
+    
+      
+    </form>
+   <center> <input onclick=" location.href='http://127.0.0.1:8000/registrar/' " style='font-size: 200%; width:350px; height:70px; background-color: orange; color: white;' class="redondeado" type="submit" value="Registrar" ></center> 
+   
+
+
+    <br>
+    <br>
+  
+    <br>
+    <br>
+    <br>
+    <br>
+    </body>
+    </html>
+

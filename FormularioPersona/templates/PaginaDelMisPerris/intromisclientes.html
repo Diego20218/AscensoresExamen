@@ -1,0 +1,235 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>Ascensores</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    </head>
+<body style="background-image: url(/static/img/fondo.jpg);">
+     
+         {% if Info %}
+        {% for informacion in Info %}
+
+      <ul class="nav navbar-nav navbar-left">
+          <img style="width:50px;height: 50px; margin-top: 10px; "  src="{{ informacion.Imagen.url }}">
+      </ul>
+         
+      <ul class="nav navbar-nav navbar-left">
+        
+        <li class="dropdown">
+           
+         <a href="#" style='background-color: orange; color: white;' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ informacion.Nombre }}<span class="caret"></span></a>
+        
+         <ul class="dropdown-menu" role="menu">
+         
+{% if user.is_staff %}
+            <li><a href="http://127.0.0.1:8000/intro">Agregar clientes</a></li>
+            <li><a href="http://127.0.0.1:8000/introlistaclientes">Ver lista de clientes</a></li>
+  {% endif %}
+            <li><a href="http://127.0.0.1:8000/listadeascensorestotal">Lista Ascensores</a></li>
+            <li><a href="http://127.0.0.1:8000/misclientesasignados">Clientes asignados</a></li>
+            <li><a href="http://127.0.0.1:8000/mostrarperfil">Ver Perfil</a></li>
+            <li><a href="http://127.0.0.1:8000/login">Cerrar Sesión</a></li>
+         </ul>
+       </li>
+    </ul>
+    {% endfor %}
+        {% else %}
+    <ul class="nav navbar-nav navbar-left">
+        <img style="width:50px;height: 50px; margin-top: 10px;"  src="{% static 'img/pregunta.png' %}">
+    </ul>
+       
+    <ul class="nav navbar-nav navbar-left">
+      
+      <li class="dropdown">
+         
+       <a href="#" style='background-color: orange; color: white;' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sin informacion<span class="caret"></span></a>
+      
+       <ul class="dropdown-menu" role="menu">
+          {% if user.is_staff %}
+            <li><a href="http://127.0.0.1:8000/intro">Agregar clientes</a></li>
+            <li><a href="http://127.0.0.1:8000/introlistaclientes">Ver lista de clientes</a></li>
+  {% endif %}
+            <li><a href="http://127.0.0.1:8000/listadeascensorestotal">Lista Ascensores</a></li>
+            <li><a href="http://127.0.0.1:8000/misclientesasignados">Clientes asignados</a></li>
+            <li><a href="http://127.0.0.1:8000/mostrarperfil">Ver Perfil</a></li>
+            <li><a href="http://127.0.0.1:8000/login">Cerrar Sesión</a></li>
+       </ul>
+     </li>
+  </ul>
+  {% endif %}
+
+<br>
+<br>
+<br>
+<br>    
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+   <table style='font-size: 130%; background-color: orange; color: white;' class="table table-bordered">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>NOMBRE</td>
+          <td>DIRECCION</td>
+          <td>CIUDAD</td>
+          <td>COMUNA</td>
+          <td>TELEFONO</td>
+          <td>CORREO</td>
+          <td>Asignar</td>
+          <td>Estado</td>
+          <td></td>
+
+        </tr>
+      </thead>
+    
+      <tbody>
+    
+    <div align="center">
+      <h1 style="font-family: times; color: white;" > Clientes Asignados </h1>
+    </div>
+    <br>
+       
+        
+
+
+ 
+        {% if ListaClientes %}       
+        {% for pons in ListaClientes %}
+
+        
+       
+        <tr>
+         <td>{{ pons.id }}</td>
+        <td>{{ pons.NombreCliente }}</td>
+        <td>{{ pons.DireccionCliente }}</td>
+        <td>{{ pons.CiudadCliente }}</td>
+        <td>{{ pons.ComunaCliente }}</td>
+        <td>{{ pons.TelefonoCliente }}</td>
+        <td>{{ pons.CorreoCliente }}</td>      
+        <td>{{ pons.AsignadoCliente }}</td>      
+        <td>{{ pons.EstadoCliente }}</td>      
+ 
+       <td>   
+
+  {% if pons.EstadoCliente == Atendido %}       
+  {{ pons.EstadoCliente }}
+  {% else %}
+ <a class="btn btn-primary" href="{% url 'hola:seleccionclientes' pons.id %}">Seleccionar</a>
+
+{% endif %}
+<a class="btn btn-primary" href="{% url 'hola:introcambiarusuario' pons.id %}">Cambiar Estado</a>
+  </td>   
+ 
+
+
+        </tr>
+        
+
+
+        {% endfor %}
+        {% else %}
+    
+        <h1 style=' color: white;'>No hay clientes Asignados.</h1>
+    
+        {% endif %}
+    
+      </tbody>
+    
+    </table>
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>    
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>    
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>    
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+
+    </body>
+    </html>
+    

@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>Ascensores</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/estilos.css' %}" type="text/css">
+</head>
+<body style="background-image: url(/static/img/fondo.jpg);">
+    
+   
+    
+    <form method="POST">
+    {% csrf_token %}   
+   
+    <br>
+    <br>
+    <br>
+    
+
+   
+    
+<center><label style='font-size: 170%; color: #26E46B;'>Aquí podrás registrarte como trabajador para la empresa de ascensores. </label></center>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+   <center><label style='font-size: 130%; color: white;'>Nombre</label></center>
+    <br>
+  <center> <input style='width:350px; height:30px;' class="redondeado" type="text" name="first_name"></center>
+  
+    <br>
+      <center> <label style='font-size: 130%; color: white;'>Apellido</label></center>
+      <br>
+      <center><input style='width:350px; height:30px;' class="redondeado" type="text" name="last_name"></center>        
+        <br>
+     <center><label style='font-size: 130%; color: white;'>Nombre de usuario</label></center>   
+        <br>
+      <center><input style='width:350px; height:30px;' class="redondeado" type="text" name="username"></center>   
+        <br>
+       <center><label style='font-size: 130%; color: white;'>Correo</label></center>   
+        <br>
+       <center><input style='width:350px; height:30px;' class="redondeado" type="text" name="email"></center>   
+        <br>
+       <center><label style='font-size: 130%; color: white;'>Contraseña</label></center>   
+       <br>
+       <center><input style='width:350px; height:30px;' class="redondeado" type="password" name="password1"></center>   
+       <br>
+       <center><label style='font-size: 130%; color: white;'>Repita la Contraseña</label></center>   
+       <br>
+       <center><input style='width:350px; height:30px;' class="redondeado" type="password" name="password2"></center>   
+        <br>
+      
+        
+       
+        <br>
+        <br>
+         
+               <center><td colspan="2" align="center"></td><input   style='font-size: 200%; width:200px; height:50px;  background-color: #FFAA00; color: white;' class="redondeado" type="submit" value="Registrar" ></td></center>             
+                         
+    </form>
+<br>
+<center><input onclick=" location.href='http://127.0.0.1:8000/login'" style='font-size: 200%;width:200px; height:50px; background-color: #25E734; color: white;' class="redondeado" type="submit" value="Volver">  </center>   
+
+ 
+    </body>
+    </html>
+

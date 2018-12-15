@@ -1,0 +1,198 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>Mobike Mapa</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    </head>
+<body style="background-image: url(/static/img/fondo.jpg);">
+     
+       {% if Info %}
+        {% for informacion in Info %}
+
+      <ul class="nav navbar-nav navbar-left">
+          <img style="width:50px;height: 50px; margin-top: 10px; "  src="{{ informacion.Imagen.url }}">
+      </ul>
+         
+      <ul class="nav navbar-nav navbar-left">
+        
+        <li class="dropdown">
+           
+         <a href="#" style='background-color: orange; color: white;' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ informacion.Nombre }}<span class="caret"></span></a>
+        
+         <ul class="dropdown-menu" role="menu">
+         
+{% if user.is_staff %}
+            <li><a href="http://127.0.0.1:8000/intro">Agregar clientes</a></li>
+            <li><a href="http://127.0.0.1:8000/introlistaclientes">Ver lista de clientes</a></li>
+  {% endif %}
+            <li><a href="http://127.0.0.1:8000/listadeascensorestotal">Lista Ascensores</a></li>
+            <li><a href="http://127.0.0.1:8000/misclientesasignados">Clientes asignados</a></li>
+            <li><a href="http://127.0.0.1:8000/mostrarperfil">Ver Perfil</a></li>
+            <li><a href="http://127.0.0.1:8000/login">Cerrar Sesión</a></li>
+         </ul>
+       </li>
+    </ul>
+    {% endfor %}
+        {% else %}
+    <ul class="nav navbar-nav navbar-left">
+        <img style="width:50px;height: 50px; margin-top: 10px;"  src="{% static 'img/pregunta.png' %}">
+    </ul>
+       
+    <ul class="nav navbar-nav navbar-left">
+      
+      <li class="dropdown">
+         
+       <a href="#" style='background-color: orange; color: white;' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sin informacion<span class="caret"></span></a>
+      
+       <ul class="dropdown-menu" role="menu">
+          {% if user.is_staff %}
+            <li><a href="http://127.0.0.1:8000/intro">Agregar clientes</a></li>
+            <li><a href="http://127.0.0.1:8000/introlistaclientes">Ver lista de clientes</a></li>
+  {% endif %}
+            <li><a href="http://127.0.0.1:8000/listadeascensorestotal">Lista Ascensores</a></li>
+            <li><a href="http://127.0.0.1:8000/misclientesasignados">Clientes asignados</a></li>
+            <li><a href="http://127.0.0.1:8000/mostrarperfil">Ver Perfil</a></li>
+            <li><a href="http://127.0.0.1:8000/login">Cerrar Sesión</a></li>
+       </ul>
+     </li>
+  </ul>
+  {% endif %}
+
+<br>
+<br>
+<br>
+<br>    
+<br>
+<br>
+
+
+
+
+
+<form method="post" style="margin:20px 100px" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+
+<center> <h1  style="color:orange;">Modificar Cliente</h1></center>
+<br>
+<br>
+<center> <label style='font-size: 130%; color: white;'>Nombre:</label> </center>
+<center>{{ form.NombreCliente }}</center>
+<br>
+<center> <label style='font-size: 130%; color: white;'>Dirección:</label> </center>
+<center>{{ form.DireccionCliente }}</center>
+<br>
+<center> <label style='font-size: 130%; color: white;'>Ciudad:</label> </center>
+<center>{{ form.CiudadCliente }}</center>
+<br>
+<center> <label style='font-size: 130%; color: white;'>Comuna:</label> </center>
+<center>{{ form.ComunaCliente }}</center>
+<br>
+<center> <label style='font-size: 130%; color: white;'>Telefono:</label> </center>
+<center>{{ form.TelefonoCliente }}</center>
+<br>
+<center> <label style='font-size: 130%; color: white;'>Correo:</label> </center>
+<center>{{ form.CorreoCliente }}</center>
+<br>
+<center> <label style='font-size: 130%; color: white;'>Asignar a:</label> </center>
+<center>{{ form.AsignadoCliente }}</center>
+<br>
+<center> <label style='font-size: 130%; color: white;'>Estado del Cliente:</label> </center>
+<center>{{ form.EstadoCliente }}</center>
+
+
+<br>
+<br>
+<center><td colspan="2" ><input   style='font-size: 200%; width:350px; height:80px; background-color: orange; color: white;' class="redondeado" type="submit" value="Modificar" ></td></center>
+
+    
+
+
+</form>
+
+
+  
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>    
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>    
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>    
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+
+    </body>
+    </html>
+    

@@ -1,0 +1,129 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>Ascensores</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    </head>
+<body style="background-image: url(/static/img/fondo.jpg);">
+
+  {% if Info %}
+        {% for informacion in Info %}
+
+         
+      <ul class="nav navbar-nav navbar-left">
+        
+        <li class="dropdown">
+           
+         <a href="#" style='background-color: orange; color: white;' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ informacion.Nombre }}<span class="caret"></span></a>
+        
+         <ul class="dropdown-menu" role="menu">
+         
+{% if user.is_staff %}
+            <li><a href="http://127.0.0.1:8000/intro">Agregar clientes</a></li>
+            <li><a href="http://127.0.0.1:8000/introlistaclientes">Ver lista de clientes</a></li>
+  {% endif %}
+            <li><a href="http://127.0.0.1:8000/listadeascensorestotal">Lista Ascensores</a></li>
+            <li><a href="http://127.0.0.1:8000/misclientesasignados">Clientes asignados</a></li>
+            <li><a href="http://127.0.0.1:8000/mostrarperfil">Ver Perfil</a></li>
+            <li><a href="http://127.0.0.1:8000/login">Cerrar Sesión</a></li>
+         </ul>
+       </li>
+    </ul>
+    {% endfor %}
+        {% else %}
+    <ul class="nav navbar-nav navbar-left">
+        <img style="width:50px;height: 50px; margin-top: 10px;"  src="{% static 'img/pregunta.png' %}">
+    </ul>
+       
+    <ul class="nav navbar-nav navbar-left">
+      
+      <li class="dropdown">
+         
+       <a href="#" style='background-color: orange; color: white;' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sin informacion<span class="caret"></span></a>
+      
+       <ul class="dropdown-menu" role="menu">
+          {% if user.is_staff %}
+            <li><a href="http://127.0.0.1:8000/intro">Agregar clientes</a></li>
+            <li><a href="http://127.0.0.1:8000/introlistaclientes">Ver lista de clientes</a></li>
+  {% endif %}
+            <li><a href="http://127.0.0.1:8000/listadeascensorestotal">Lista Ascensores</a></li>
+            <li><a href="http://127.0.0.1:8000/misclientesasignados">Clientes asignados</a></li>
+            <li><a href="http://127.0.0.1:8000/mostrarperfil">Ver Perfil</a></li>
+            <li><a href="http://127.0.0.1:8000/login">Cerrar Sesión</a></li>
+       </ul>
+     </li>
+  </ul>
+  {% endif %}
+
+<br>
+<br>
+<br>
+
+
+
+ 
+
+{% if Info %}
+        {% for informacion in Info %}
+       
+
+<center><h1 style="color: white">Tu Perfil</h1></center>
+<br>    
+<br>
+<br>
+ 
+        <tr>
+               
+            <td><center><img style="width:200px;height: 200px; margin-top: 10px; background-color:#107EB1;"  src="{{ informacion.Imagen.url }}"></center></td>
+            <br>
+            <td><center><h1 style='color: white;'>{{ informacion.Nombre }}</h1></center></td>
+            <td><center><h3 style='color: white;'>Fecha Nacimiento: {{ informacion.Fecha }}</h3></center></td>
+            <td><center><h3 style='color: white;'>Edad: {{ informacion.Edad }} </h3></center></td>          
+            <td><center><h3 style='color: white;'>Direccion: {{ informacion.Direccion }}</h3></center></td>
+            <td><center><h3 style='color: white;'>Email: {{ informacion.Email }}</h3></center></td>
+            <td><center><h3 style='color: white;'>Telefono: {{ informacion.Telefono }}</h3></center></td>
+            <br>
+            <br>
+        </tr>
+
+
+        {% endfor %}
+        {% else %}
+
+    <br>
+       
+       <center><h1 style="color: white;">Sin Datos en tu Perfil</h1></center>
+ <br>
+  <br>
+        <br>
+<center><img  src="{% static 'img/pregunta.png' %}" width="300" height="300" alt="aaaaa" /></center>
+      
+        
+        <br>
+        <br>
+        <br>
+    
+        
+<center><input onclick=" location.href='http://127.0.0.1:8000/crearperfil'" class="redondeado" style='font-size: 200%; width:300px; height:70px; background-color:orange; color: white;' type="submit" value="Agregar Perfil"></center>
+        {% endif %}
+
+
+
+
+
+
+
+
+   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+        
+    </body>
+    </html>
+    

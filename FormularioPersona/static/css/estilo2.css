@@ -1,0 +1,336 @@
+body{
+    
+    margin: 10% center;
+}
+header{
+
+    margin:10% center;
+    size: 35%;
+}
+
+.column {
+    float: right;
+    width: 10%;
+    padding: 1px;
+    color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.column2 {
+    float: left;
+    width: 7%;
+    padding: 0px;
+}
+
+/* Clear floats after the columns */
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.imagenbics {
+float:center;
+position: absolute;
+    top: 300px;
+    left: 700px;
+}
+
+
+.selecciones li{
+	display:inline-block;
+	text-decoration: none;
+    color: white;
+    float: right;
+}
+
+.selecciones li a{
+	padding:10px 20px;
+	display:inline-block;
+	text-decoration: none;
+	color:white;
+	background: red;
+	
+}
+
+.selecciones li a:hover {
+	background: green;
+	color: white;
+}
+
+
+.labelinicio{
+    color: red;
+    font-size:1200%;
+    float: auto;
+	font-weight: bold;
+	overflow: hidden;
+	padding: auto;
+}
+
+.labelbienvenido{
+    color: blue;
+    font-size:450%;
+}
+.labelseleccionedatos{
+    color: blue;
+    font-size:150%;
+    font-weight: bold;
+}
+
+.labeltiempo{
+    color: white;
+    background-color: blue;
+    font-size:130%;
+    font-weight: bold;
+}
+.asdasd{
+    color: green;
+
+}
+
+
+.labelrecuerda{
+    color: black;
+    background-color: red;
+    font-size:130%;
+    font-weight: bold;
+}
+
+
+.labelperfil{
+    font-size:200%;
+}
+
+.botoningresar{
+    text-align: center;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: 3px solid #000000;
+}
+
+.botonregistrar{
+    text-align: center;
+    background-color: orange;
+    color: black;
+    border-radius: 5px;
+    border: 3px solid #000000;
+}
+
+.botonguardar{
+    text-align: center;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: 3px solid #000000;
+}
+
+.botoncancelar{
+    text-align: center;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: 3px solid #000000;
+}
+
+.botonacceder{
+    text-align: center;
+    background-color: yellow;
+    color: black;
+    border-radius: 5px;
+    border: 3px solid #000000;
+}
+
+.Extra1{
+	float: auto;
+	font-weight: bold;
+	overflow: hidden;
+	padding: auto;
+    text-align: center;
+    font-size:120%;
+}
+
+.Extra2{
+	float: auto;
+	font-weight: bold;
+	overflow: hidden;
+	padding: auto;
+    text-align: center;
+    font-size:120%;
+}
+
+
+div#Principal{
+	background-color: lightblue;
+	margin:auto;
+	text-align: center;
+	padding: 0;
+    height: 40px;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+div#Principaldos{
+	background-color: blue;
+	margin:auto;
+	text-align: center;
+	padding: 0;
+    height: 55px;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+}
+
+
+div#botonborraradmin{
+	float:right;
+}
+
+
+div#imagens{
+    position: relative;
+}
+
+div#botonesbicicletas1{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+}
+
+div#botonesbicicletas2{
+    position: absolute;
+    top: 100px;
+    left: 1000px; 
+}
+
+div#botonesbicicletas3{
+    position: absolute;
+    top: 500px;
+    left: 1600px;
+}
+
+div#botonesbicicletas4{
+    position: absolute;
+    top: 700px;
+    left: 400px;
+}
+
+div#botonesbicicletas5{
+    position: absolute;
+    top: 600px;
+    left: 1100px;
+}
+
+div#botonesbicicletas6{
+    position: absolute;
+    top: 150px;
+    left: 1600px;
+}
+
+div#botonesbicicletas7{
+    position: absolute;
+    top: 1000px;
+    left: 1600px;
+}
+
+div#botonentendido{
+    position: absolute;
+    top: 500px;
+    left: 700px;
+}
+
+.labelbicinodisponible{
+    background-color: red;
+    color: white;
+    font-size:200%;
+    float: auto;
+	font-weight: bold;
+	overflow: hidden;
+	padding: auto;
+}
+
+div#botonarrendar{
+    position: absolute;
+    top: 500px;
+    left: 700px;
+}
+
+.labelbicidisponible{
+    background-color: lightblue;
+    color: white;
+    font-size:200%;
+    float: auto;
+	font-weight: bold;
+	overflow: hidden;
+	padding: auto;
+}
+
+div#botonarrendar2{
+    position: absolute;
+    top: 100px;
+    left: 800px;
+}
+
+
+.labeltransucurrido{
+    background-color: black;
+    color: black;
+    font-size:200%;
+    float: auto;
+	font-weight: bold;
+	overflow: hidden;
+	padding: auto;
+}
+
+.labeltransucurrido2{
+    background-color: white;
+    color: green;
+    font-size:200%;
+    float: auto;
+	font-weight: bold;
+	overflow: hidden;
+	padding: auto;
+}
+
+.labeladmins{
+    color: black;
+    font-size:200%;
+    float: left;
+    font-weight: bold;
+}
+
+.labeladmins2{
+    color: black;
+    font-size:300%;
+    font-weight: bold;
+}
+.labeladmins3{
+    color: black;
+    font-size:300%;
+    font-weight: bold;
+    float: right;
+}
+
+div#paginaadmin{
+    background-color: lightblue;
+}
+
+
+
+
+
+
+
+
+
+
